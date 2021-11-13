@@ -25,6 +25,7 @@ def makebet():
         makebet()
 #heads or tails
 def coinguess():
+    global balance
     global guess
     guess = 0
     print("balance: " + str(balance))
@@ -36,7 +37,9 @@ def coinguess():
         guess = 2
         coinflip()
     else:
-        print("please guess heads or tails.")
+        print("please guess heads or tails.\n\n")
+        balance = balance + int(bet)
+        makebet()
 #the coin flipping
 def coinflip():
     global balance
